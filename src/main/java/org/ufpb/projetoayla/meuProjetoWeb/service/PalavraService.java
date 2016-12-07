@@ -27,7 +27,7 @@ public class PalavraService {
 		return palavras.get(id);
 	}
 	
-	public Palavra addMessage(Palavra palavra){
+	public Palavra addPalavra(Palavra palavra){
 		palavra.setId(palavras.size() + 1);
 		palavras.put(palavra.getId(), palavra);
 		return palavra;
