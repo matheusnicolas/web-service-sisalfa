@@ -40,6 +40,6 @@ public class ContextoService {
 	}
 	
 	public Contexto removeContexto(long id){
-		return contextos.remove("id");
+		return contextos.remove(id);
 	}
 }

@@ -3,8 +3,10 @@ package org.ufpb.projetoayla.meuProjetoWeb.resources;
 import java.util.List;
 
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -23,6 +25,13 @@ public class ContextoResources {
 		return contextoService.getAllContextos();
 	}
 	
+	@GET
+	@Path("/{contextoId}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Contexto getContexto(@PathParam("contextoId") long id){
+		return contextoService.getContexto(id);
+	}
+	
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
@@ -30,10 +39,23 @@ public class ContextoResources {
 		return contextoService.addContexto(palavra);
 	}
 	
-	@GET
-	@Path("/{contextoID}")
+	@PUT
+	@Path("/{contextoId}")
+	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public Contexto getContexto(@PathParam("contextoID") long id){
-		return contextoService.getContexto(id);
+	public Contexto updateContexto(@PathParam("contextoId") long id, Contexto contexto){
+		contexto.setId(id);
+		return contextoService.updateContexto(contexto);
 	}
+	
+	@DELETE
+	@Path("/{contextoId}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public void deleteContexto(@PathParam("contextoId") long id){
+		contextoService.removeContexto(id);
+	}
+	
+	
+	
+	
 }
