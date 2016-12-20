@@ -1,0 +1,79 @@
+package org.ufpb.projetoayla.meuProjetoWeb.model;
+
+import java.util.Date;
+
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
+public class Contexto {
+
+	private long id;
+	private String nome;
+	private String imagem;
+	private String audio;
+	private String id_usuario;
+	private Date created;
+	
+	public Contexto(long id, String nome, String imagem, String audio, String id_usuario){
+		this.id = id;
+		this.nome = nome;
+		this.imagem = imagem;
+		this.audio = audio;
+		this.id_usuario = id_usuario;
+		this.created = new Date();
+	}
+	
+	public Contexto(){
+		
+	}
+
+	public long getId() {
+		return this.id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getNome() {
+		return this.nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getImagem() {
+		return this.imagem;
+	}
+
+	public void setImagem(String imagem) {
+		this.imagem = imagem;
+	}
+
+	public Date getCreated() {
+		return this.created;
+	}
+
+	public void setCreated(Date created) {
+		this.created = created;
+	}
+
+	public String getAudio() {
+		return this.audio;
+	}
+
+	public void setAudio(String audio) {
+		this.audio = audio;
+	}
+
+	public String getId_usuario() {
+		return this.id_usuario;
+	}
+
+	public void setId_usuario(String id_usuario) {
+		this.id_usuario = id_usuario;
+	}
+	
+	
+}
