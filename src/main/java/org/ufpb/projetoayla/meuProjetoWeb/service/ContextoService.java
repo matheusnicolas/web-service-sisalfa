@@ -1,6 +1,7 @@
 package org.ufpb.projetoayla.meuProjetoWeb.service;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Map;
 
@@ -19,6 +20,26 @@ public class ContextoService {
 
 	public List<Contexto> getAllContextos(){
 		return new ArrayList<Contexto>(contextos.values());
+	}
+	
+	public List<Contexto> getAllContextosForYear(int year){
+		List <Contexto> contextosForYear = new ArrayList<>();
+		Calendar calendario = Calendar.getInstance();
+		for(Contexto contexto: contextos.values()){
+			calendario.setTime(contexto.getCreated());
+			if(calendario.get(Calendar.YEAR) == year){
+				contextosForYear.add(contexto);
+			}
+		}
+		return contextosForYear;
+	}
+	
+	public List<Contexto> getAllContextosPaginated(int start, int size){
+		ArrayList<Contexto> list = new ArrayList<Contexto>(contextos.values());
+		if((start + size) > list.size()){
+			return new ArrayList<Contexto>();
+		}
+		return list.subList(start, start + size);
 	}
 	
 	public Contexto getContexto(long id){

@@ -9,13 +9,13 @@ import org.ufpb.projetoayla.meuProjetoWeb.model.Profile;
 public class DatabaseClass {
 
 	private static Map<Long, Contexto> contextos = new HashMap<>();
-	private static Map<Long, Profile> profiles = new HashMap<>();
+	private static Map<String, Profile> profiles = new HashMap<>();
 	
 	public static Map<Long, Contexto> getMessages(){
 		return contextos;
 	}
 	
-	public static Map<Long, Profile> getProfiles(){
+	public static Map<String, Profile> getProfiles(){
 		return profiles;
 	}
 }
