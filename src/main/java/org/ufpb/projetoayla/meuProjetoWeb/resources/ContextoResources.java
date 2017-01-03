@@ -1,7 +1,10 @@
 package org.ufpb.projetoayla.meuProjetoWeb.resources;
 
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.List;
 
+import javax.ws.rs.BeanParam;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -10,10 +13,13 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+import javax.ws.rs.core.UriInfo;
 
 import org.ufpb.projetoayla.meuProjetoWeb.model.Contexto;
+import org.ufpb.projetoayla.meuProjetoWeb.resources.beans.ContextoFilterBean;
 import org.ufpb.projetoayla.meuProjetoWeb.service.ContextoService;
 
 @Path("/contextos")
@@ -24,12 +30,12 @@ public class ContextoResources {
 	ContextoService contextoService = new ContextoService();
 
 	@GET
-	public List<Contexto> getContextos(@QueryParam("year") int year, @QueryParam("start") int start, @QueryParam("size") int size){
-		if(year > 0){
-			return contextoService.getAllContextosForYear(year);
+	public List<Contexto> getContextos(@BeanParam ContextoFilterBean filterBean){
+		if(filterBean.getYear() > 0){
+			return contextoService.getAllContextosForYear(filterBean.getYear());
 		}
-		if(start >= 0 && size > 0){
-			return contextoService.getAllContextosPaginated(start, size);
+		if(filterBean.getStart() >= 0 && filterBean.getSize() > 0){
+			return contextoService.getAllContextosPaginated(filterBean.getStart(), filterBean.getSize());
 		}
 		return contextoService.getAllContextos();
 	}
@@ -41,8 +47,13 @@ public class ContextoResources {
 	}
 	
 	@POST
-	public Contexto addContexto(Contexto palavra){
-		return contextoService.addContexto(palavra);
+	public Response addContexto(Contexto palavra, @Context UriInfo uriInfo) throws URISyntaxException{
+		
+		Contexto newContexto = contextoService.addContexto(palavra);
+		String newId = String.valueOf(newContexto.getId());
+		URI uri = uriInfo.getAbsolutePathBuilder().path(newId).build();
+		return Response.created(uri).entity(newContexto).build();
+		
 	}
 	
 	@PUT
