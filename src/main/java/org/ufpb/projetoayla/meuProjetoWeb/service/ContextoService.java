@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.ufpb.projetoayla.meuProjetoWeb.database.DatabaseClass;
+import org.ufpb.projetoayla.meuProjetoWeb.exception.DataNotFoundException;
 import org.ufpb.projetoayla.meuProjetoWeb.model.Contexto;
 
 public class ContextoService {
@@ -43,7 +44,11 @@ public class ContextoService {
 	}
 	
 	public Contexto getContexto(long id){
-		return contextos.get(id);
+		Contexto contexto = contextos.get(id);
+		if(contexto == null){
+			throw new DataNotFoundException("O contexto de id " + id + " nao foi encontrado");
+		}
+		return contexto;
 	}
 	
 	public Contexto addContexto(Contexto contexto){
