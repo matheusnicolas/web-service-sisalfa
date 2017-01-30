@@ -8,15 +8,15 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class Contexto {
 
 	private long id;
-	private String nome;
+	private String palavra;
 	private String imagem;
 	private String audio;
 	private String id_usuario;
 	private Date created;
 	
-	public Contexto(long id, String nome, String imagem, String audio, String id_usuario){
+	public Contexto(long id, String palavra, String imagem, String audio, String id_usuario){
 		this.id = id;
-		this.nome = nome;
+		this.palavra = palavra;
 		this.imagem = imagem;
 		this.audio = audio;
 		this.id_usuario = id_usuario;
@@ -36,11 +36,11 @@ public class Contexto {
 	}
 
 	public String getNome() {
-		return this.nome;
+		return this.palavra;
 	}
 
 	public void setNome(String nome) {
-		this.nome = nome;
+		this.palavra = nome;
 	}
 
 	public String getImagem() {

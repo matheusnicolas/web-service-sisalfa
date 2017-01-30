@@ -1,0 +1,86 @@
+h1{
+	text-align: center;
+	color: deeppink;
+	font-family: sans-serif;
+}
+
+form {
+	margin: 0 auto;
+	width: 400px;
+	padding: 1em;
+	border: 1px solid #CCC;
+	border-radius: 1em;
+}
+
+body{
+	background-color: azure;
+}
+
+p{
+	font-family: monospace;
+
+}
+
+table{
+
+	font-family: monospace
+
+}
+
+#testando{
+
+	color:blue;
+	height: 50px;
+    width: 120px;
+    border-color: #6495ED;
+    background-color: #BCD2EE;
+    border-style: 2px;
+    border-radius: 5px;
+    margin: right;
+    text-align: center;
+    text-decoration: none;
+}
+
+a:hover{
+	color: #cc0000;
+	font-weight:bold;
+	text-decoration: none;
+}
+
+a:link{
+    text-decoration: none;
+    color: #008b45;
+}
+
+a:visited{
+    color:#EE9A00;    
+}
+
+img{
+	border: 1px solid #4682b4;
+	/*height: 400px;
+	width: 00px;*/
+}
+/*pega todos
+div p{
+
+
+}*/
+
+/*pega apenas o parágrafo dentro de div
+div > p{
+	color: green;
+
+}*/
+/*Como fazer um botão (exemplo)
+div{
+    height: 50px;
+    width: 120px;
+    border-color: #6495ED;
+    background-color: #BCD2EE;
+    border-style: 2px;
+    border-radius: 5px;
+    margin: auto;
+    text-align: center;
+    text-decoration: none;
+}*/

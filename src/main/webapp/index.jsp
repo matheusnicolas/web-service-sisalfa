@@ -1,8 +1,12 @@
 <html>
+<head>
+	<title>Web Service</title>
+	<link type="text/css" rel="stylesheet" href="corpo.css">
+</head>
 <body>
-    <h2>Jersey RESTful Web Application!</h2>
-    <p><a href="webapi/myresource">Jersey resource</a>
-    <p>Visit <a href="http://jersey.java.net">Project Jersey website</a>
-    for more information on Jersey!
+	<h1>Bem vindo ao web service REST!</h1>
+    <p style="font-size:35px"><a href="cadastrarContexto.jsp">Cadastrar Contexto</a></p>
+    <p style="font-size:35px"><a href="webapi/contextos">Listar todos os contextos cadastrados</a></p>
+    
 </body>
 </html>
