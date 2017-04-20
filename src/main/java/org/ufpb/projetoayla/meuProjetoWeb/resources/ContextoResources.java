@@ -47,6 +47,7 @@ public class ContextoResources {
 	}
 	
 	@POST
+	@Consumes(MediaType.APPLICATION_JSON)
 	public Response addContexto(Contexto palavra, @Context UriInfo uriInfo) throws URISyntaxException{
 		
 		Contexto newContexto = contextoService.addContexto(palavra);

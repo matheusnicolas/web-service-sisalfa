@@ -20,7 +20,6 @@ public class Contexto {
 		this.imagem = imagem;
 		this.audio = audio;
 		this.id_usuario = id_usuario;
-		this.created = new Date();
 	}
 	
 	public Contexto(){
@@ -28,39 +27,31 @@ public class Contexto {
 	}
 
 	public long getId() {
-		return this.id;
+		return id;
 	}
 
 	public void setId(long id) {
 		this.id = id;
 	}
 
-	public String getNome() {
-		return this.palavra;
+	public String getPalavra() {
+		return palavra;
 	}
 
-	public void setNome(String nome) {
-		this.palavra = nome;
+	public void setPalavra(String palavra) {
+		this.palavra = palavra;
 	}
 
 	public String getImagem() {
-		return this.imagem;
+		return imagem;
 	}
 
 	public void setImagem(String imagem) {
 		this.imagem = imagem;
 	}
 
-	public Date getCreated() {
-		return this.created;
-	}
-
-	public void setCreated(Date created) {
-		this.created = created;
-	}
-
 	public String getAudio() {
-		return this.audio;
+		return audio;
 	}
 
 	public void setAudio(String audio) {
@@ -68,12 +59,18 @@ public class Contexto {
 	}
 
 	public String getId_usuario() {
-		return this.id_usuario;
+		return id_usuario;
 	}
 
 	public void setId_usuario(String id_usuario) {
 		this.id_usuario = id_usuario;
 	}
-	
-	
+
+	public Date getCreated() {
+		return created;
+	}
+
+	public void setCreated(Date created) {
+		this.created = created;
+	}
 }

@@ -11,12 +11,12 @@ import org.ufpb.projetoayla.meuProjetoWeb.model.Contexto;
 
 public class ContextoService {
 	
-	private Map<Long, Contexto> contextos = DatabaseClass.getMessages();
+	private Map<Long, Contexto> contextos = DatabaseClass.getContextos();
 	
 	public ContextoService(){
-		contextos.put(1L, new Contexto(1, "Instituto", "IMAGEM.PNG" ,"(DESCRIÇÃO ÁUDIO)", "João"));
-		contextos.put(2L, new Contexto(2, "Brasil", "país.jpeg", "(DESCRIÇÃO ÁUDIO)", "Maria"));
-		contextos.put(3L, new Contexto(3, "Urbanização", "RUA.PNG", "(DESCRIÇÃO ÁUDIO)" , "Felipe"));
+		//contextos.put(1L, new Contexto(1, "Instituto", "IMAGEM.PNG" ,"(DESCRIÇÃO ÁUDIO)", "João"));
+		//contextos.put(2L, new Contexto(2, "Brasil", "país.jpeg", "(DESCRIÇÃO ÁUDIO)", "Maria"));
+		//contextos.put(3L, new Contexto(3, "Urbanização", "RUA.PNG", "(DESCRIÇÃO ÁUDIO)" , "Felipe"));
 	}
 
 	public List<Contexto> getAllContextos(){
