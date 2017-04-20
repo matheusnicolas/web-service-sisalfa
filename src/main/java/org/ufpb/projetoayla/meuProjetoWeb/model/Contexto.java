@@ -27,7 +27,7 @@ public class Contexto {
 	}
 
 	public long getId() {
-		return id;
+		return this.id;
 	}
 
 	public void setId(long id) {
@@ -35,7 +35,7 @@ public class Contexto {
 	}
 
 	public String getPalavra() {
-		return palavra;
+		return this.palavra;
 	}
 
 	public void setPalavra(String palavra) {
@@ -43,7 +43,7 @@ public class Contexto {
 	}
 
 	public String getImagem() {
-		return imagem;
+		return this.imagem;
 	}
 
 	public void setImagem(String imagem) {
@@ -51,7 +51,7 @@ public class Contexto {
 	}
 
 	public String getAudio() {
-		return audio;
+		return this.audio;
 	}
 
 	public void setAudio(String audio) {
@@ -59,7 +59,7 @@ public class Contexto {
 	}
 
 	public String getId_usuario() {
-		return id_usuario;
+		return this.id_usuario;
 	}
 
 	public void setId_usuario(String id_usuario) {
@@ -67,7 +67,7 @@ public class Contexto {
 	}
 
 	public Date getCreated() {
-		return created;
+		return this.created;
 	}
 
 	public void setCreated(Date created) {
