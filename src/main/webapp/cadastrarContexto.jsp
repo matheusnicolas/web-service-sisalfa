@@ -7,30 +7,30 @@
 	<title>Cadastrar Contexto</title>
 	<link type="text/css" rel="stylesheet" href="corpo.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-	<script >
-		$(document).ready(function(){
-			$("botaoEnviar").click(function(event) {
-				event.preventDefault();
-				$.ajax({
-					url: 'http://localhost:8080/meuProjetoWeb/webapi/contextos',
-					type: 'POST',
-					dataType: 'json;',
-					data: {palavra: $('#palavra').val(), 
-						imagem: $('#imagem').val(), 
-						audio: $('#audio').val(), 
-						id_usuario: $('#idUser').val()
-					}, 
-				})
-				.done(function() {
-					console.log("success");
-				})
-				.fail(function() {
-					console.log("error");
-				})
-				.always(function() {
-					console.log("complete");
-				});
-
+		<script>
+			$(document).ready(function() {
+				$('#btnEnviar').click(function(event) {
+					$.ajax({
+						url : 'http://localhost:8080/meuProjetoWeb/webapi/contextos',
+    					type : 'POST',
+    					data: JSON.stringify({
+    					palavra: $('#palavra').val(),
+    					id_usuario: $('#idUser').val(),
+    					imagem: $('#imagem').val(),
+    					audio: $('#audio').val()
+    				}),
+    				contentType : "application/json; charset=utf-8",
+    	    		dataType : 'json',
+    	    		success: function (result) {
+    	    			alert("Contextos enviados com sucesso!");
+                		window.location = "http://localhost:8080/meuProjetoWeb/";
+             		},
+             			error: function () {
+                 		alert("Erro ao enviar contexto");
+             		}
+					});
+				});	
+			});
 		</script>
 </head>
 <body>
@@ -39,7 +39,7 @@
 	<CENTER><img src="http://revista.hupe.uerj.br/imagebank/images/v11s1a18-fig02.jpg"/></CENTER>
 	<p style="text-align:center">Informe respectivamente os dados abaixo: Palavra, Imagem, Áudio e seu id de usuário</p>
 	
-	<form method="POST" action="webapi/contextos">	
+	
 			
 			<CENTER>Palavra: <input id="palavra" type="text" name="plvra" placeholder="Digite a palavra"></CENTER><br>
 			
@@ -50,8 +50,8 @@
 			<CENTER>ID do usuário: <input id="idUser" type="text" name="idUsuario" placeholder="Digite o ID"></CENTER><br>
 			
 			<!-- <CENTER><input type="reset"></CENTER>-->
-			<CENTER><input type="submit"></CENTER>
-	</form>
+			<CENTER><button id="btnEnviar">Enviar contexto</button></CENTER>
+
 	<p style="font-size:20px"><a href="index.jsp">Voltar</a></p>
 </body>
 </html>
