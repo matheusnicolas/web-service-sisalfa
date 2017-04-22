@@ -63,29 +63,20 @@
 	<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse"
-					data-target="#myNavbar">
-					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="#">Logo</a>
+				<a class="navbar-brand" href="https://ctrle2017.dcx.ufpb.br/">Sobre
+					o CTRL+E</a>
 			</div>
-			<div class="collapse navbar-collapse" id="myNavbar">
-				<ul class="nav navbar-nav">
-					<li class="active"><a href="index.jsp">Início</a></li>
-					<li><a href="cadastrarContexto.jsp">Cadastrar Contexto</a></li>
-					<li><a href="#">Listar Contextos</a></li>
-					<li><a href="https://github.com/matheusnicolas">Contato</a></li>
-				</ul>
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#"><span class="glyphicon glyphicon-log-in"></span>
-							Login</a></li>
-				</ul>
-			</div>
+			<ul class="nav navbar-nav">
+				<a href="index.jsp"><button class="btn btn-primary navbar-btn">Início</button></a>
+				<a href="cadastrarContexto.jsp"><button class="btn btn-primary navbar-btn">Cadastrar Contexto</button></a>
+				<a href="tabela.jsp"><button class="btn btn-primary navbar-btn">Listar Contatos</button></a>
+				<a href="https://github.com/matheusnicolas/"><button class="btn btn-primary navbar-btn">Contato</button></a>
+			</ul>
+			
 		</div>
 	</nav>
-	
-	
+
+
 
 
 	<div class="container-fluid text-center">
