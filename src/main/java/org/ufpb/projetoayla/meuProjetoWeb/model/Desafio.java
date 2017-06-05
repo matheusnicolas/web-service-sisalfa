@@ -5,29 +5,35 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "contexto") 
-public class Contexto extends AbstractEntity {
+@Table(name = "desafio") 
+public class Desafio extends AbstractEntity {
 	@Column(nullable = false)
-	private String nome;
+	private String palavra;
 	@Column(nullable = false)
 	private String imagem;
 	@Column(nullable = false)
 	private String som;
-	@Column(nullable = false) 
+	@Column(nullable = false)
 	private String video;
+	
 	@JoinColumn(nullable=false)
 	@OneToOne(cascade={CascadeType.PERSIST},fetch=FetchType.LAZY)
 	private Usuario usuario;
 	
-	public String getNome() {
-		return nome;
+	@JoinColumn(nullable=false)
+	@ManyToOne(cascade={CascadeType.ALL},fetch=FetchType.LAZY)
+	private Contexto contexto;
+	
+	public String getPalavra() {
+		return palavra;
 	}
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setPalavra(String palavra) {
+		this.palavra = palavra;
 	}
 	public String getImagem() {
 		return imagem;
@@ -53,9 +59,12 @@ public class Contexto extends AbstractEntity {
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
-	@Override
-	public String toString() {
-		return this.nome;
+	public Contexto getContexto() {
+		return contexto;
 	}
-
+	public void setContexto(Contexto contexto) {
+		this.contexto = contexto;
+	}
+	
+	
 }

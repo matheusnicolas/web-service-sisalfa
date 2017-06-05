@@ -1,17 +1,13 @@
 package org.ufpb.projetoayla.meuProjetoWeb.service;
 
-import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
-import java.util.Map;
 
-import org.ufpb.projetoayla.meuProjetoWeb.database.DatabaseClass;
-import org.ufpb.projetoayla.meuProjetoWeb.exception.DataNotFoundException;
+import org.ufpb.projetoayla.meuProjetoWeb.database.ContextoDAO;
 import org.ufpb.projetoayla.meuProjetoWeb.model.Contexto;
 
 public class ContextoService {
 	
-	private Map<Long, Contexto> contextos = DatabaseClass.getContextos();
+	private static ContextoDAO dao = new ContextoDAO();
 	
 	public ContextoService(){
 		//contextos.put(1L, new Contexto(1, "Instituto", "IMAGEM.PNG" ,"(DESCRIÇÃO ÁUDIO)", "João"));
@@ -20,10 +16,32 @@ public class ContextoService {
 	}
 
 	public List<Contexto> getAllContextos(){
-		return new ArrayList<Contexto>(contextos.values());
+		return dao.findAll();
 	}
 	
-	public List<Contexto> getAllContextosForYear(int year){
+	public Contexto getContexto(long id){
+		return dao.getById(id);
+	}
+	
+	public Contexto addContexto(Contexto contexto){
+		dao.save(contexto);
+		return contexto;
+	}
+	
+	public Contexto updateContexto(Contexto contexto){
+		if(contexto.getId() <= 0){
+			return null;
+		}
+		dao.update(contexto);
+		return contexto;
+	}
+	
+	public void removeContexto(long id){
+		dao.delete(dao.getById(id));
+	}
+	
+
+	/*public List<Contexto> getAllContextosForYear(int year){
 		List <Contexto> contextosForYear = new ArrayList<>();
 		Calendar calendario = Calendar.getInstance();
 		for(Contexto contexto: contextos.values()){
@@ -33,39 +51,13 @@ public class ContextoService {
 			}
 		}
 		return contextosForYear;
-	}
+	}*/
 	
-	public List<Contexto> getAllContextosPaginated(int start, int size){
+	/*public List<Contexto> getAllContextosPaginated(int start, int size){
 		ArrayList<Contexto> list = new ArrayList<Contexto>(contextos.values());
 		if((start + size) > list.size()){
 			return new ArrayList<Contexto>();
 		}
 		return list.subList(start, start + size);
-	}
-	
-	public Contexto getContexto(long id){
-		Contexto contexto = contextos.get(id);
-		if(contexto == null){
-			throw new DataNotFoundException("O contexto de id " + id + " nao foi encontrado");
-		}
-		return contexto;
-	}
-	
-	public Contexto addContexto(Contexto contexto){
-		contexto.setId(contextos.size() + 1);
-		contextos.put(contexto.getId(), contexto);
-		return contexto;
-	}
-	
-	public Contexto updateContexto(Contexto contexto){
-		if(contexto.getId() <= 0){
-			return null;
-		}
-		contextos.put(contexto.getId(), contexto);
-		return contexto;
-	}
-	
-	public Contexto removeContexto(long id){
-		return contextos.remove(id);
-	}
+	}*/
 }
