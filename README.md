@@ -4,7 +4,6 @@
 
 ## Contribuidores
 
-![]()
 * [Robson Alves](https://github.com/robsonalvz)
 * [Matheus Nícolas](https://github.com/matheusnicolas)
 * [Ayla Rebouças](https://github.com/ayladebora)
