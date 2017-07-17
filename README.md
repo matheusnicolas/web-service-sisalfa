@@ -1,15 +1,12 @@
-# WebService Sisalfa
-Design and Development of a Collaborative System to support the process of literacy for youth and adults
+## WebService Sisalfa
 
-Projeto e Desenvolvimento de um Sistema Colaborativo para apoiar o porocesso de alfabetização de jovens e adultos
+* Sisalfa é um Projeto e Desenvolvimento de um Sistema Colaborativo para apoiar o Processo de Alfabetização de Jovens e Adultos, o principal problema a ser abordado por este projeto de pesquisa é a investigação a respeito do projeto, desenvolvimento e aplicação de um serviço que seja colaborativo e apoie o	processo de alfabetização inspirado nas ideias de Paulo Freire.
 
+## Contribuidores
 
-Contribuidores:
-
--Ayla Rebouças
-
-
--Matheus Nicolas
+![]()
+* [Robson Alves](https://github.com/robsonalvz)
+* [Matheus Nícolas](https://github.com/matheusnicolas)
+* [Ayla Rebouças](https://github.com/ayladebora)
 
 
--Robson Alves
