@@ -1,6 +1,6 @@
-package org.ufpb.projetoayla.meuProjetoWeb.database;
+package org.ufpb.sisalfa.database;
 
-import org.ufpb.projetoayla.meuProjetoWeb.model.Desafio;
+import org.ufpb.sisalfa.model.Desafio;
 
 public class DesafioDAO extends GenericDAO <Desafio> {
 	 

@@ -1,4 +1,4 @@
-package org.ufpb.projetoayla.meuProjetoWeb.model;
+package org.ufpb.sisalfa.model;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -8,8 +8,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
+@XmlRootElement
 @Table(name = "desafio") 
 public class Desafio extends AbstractEntity {
 	@Column(nullable = false)

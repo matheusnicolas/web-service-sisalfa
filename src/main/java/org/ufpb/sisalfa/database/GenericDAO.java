@@ -1,4 +1,4 @@
-package org.ufpb.projetoayla.meuProjetoWeb.database;
+package org.ufpb.sisalfa.database;
 
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
@@ -7,7 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import org.ufpb.projetoayla.meuProjetoWeb.model.AbstractEntity;
+import org.ufpb.sisalfa.model.AbstractEntity;
 
 @SuppressWarnings("unchecked")
 public class GenericDAO <T extends AbstractEntity>{

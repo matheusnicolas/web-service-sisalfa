@@ -1,11 +1,13 @@
-package org.ufpb.projetoayla.meuProjetoWeb.model;
+package org.ufpb.sisalfa.model;
 
 import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
 @Entity
+@XmlRootElement
 @Table(name = "usuario") 
 public class Usuario extends AbstractEntity {
 	@Column(nullable = false)

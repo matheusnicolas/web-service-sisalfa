@@ -1,4 +1,4 @@
-package org.ufpb.projetoayla.meuProjetoWeb.model;
+package org.ufpb.sisalfa.model;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -7,8 +7,10 @@ import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
+@XmlRootElement
 @Table(name = "contexto") 
 public class Contexto extends AbstractEntity {
 	@Column(nullable = false)

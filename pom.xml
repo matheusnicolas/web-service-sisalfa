@@ -3,14 +3,14 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.ufpb.projetoayla</groupId>
+    <groupId>org.ufpb.sisalfa</groupId>
     <artifactId>meuProjetoWeb</artifactId>
     <packaging>war</packaging>
     <version>0.0.1-SNAPSHOT</version>
-    <name>meuProjetoWeb</name>
+    <name>sisalfa</name>
 
     <build>
-        <finalName>meuProjetoWeb</finalName>
+        <finalName>sisalfa</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

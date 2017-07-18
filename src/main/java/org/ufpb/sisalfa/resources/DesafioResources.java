@@ -1,4 +1,4 @@
-package org.ufpb.projetoayla.meuProjetoWeb.resources;
+package org.ufpb.sisalfa.resources;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -13,34 +13,34 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 
-import org.ufpb.projetoayla.meuProjetoWeb.database.ContextoDAO;
-import org.ufpb.projetoayla.meuProjetoWeb.database.UsuarioDAO;
-import org.ufpb.projetoayla.meuProjetoWeb.model.Desafio;
-import org.ufpb.projetoayla.meuProjetoWeb.service.DesafioService;
+import org.ufpb.sisalfa.database.ContextoDAO;
+import org.ufpb.sisalfa.database.UsuarioDAO;
+import org.ufpb.sisalfa.model.Desafio;
+import org.ufpb.sisalfa.service.DesafioService;
 
 import com.google.gson.Gson;
-@Path("/desafios")
+@Path("/")
 public class DesafioResources {
 	private DesafioService desafioService = new DesafioService();
-	
 	@POST
+	@Path("addDesafio")
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Response addContexto(Desafio desafio, @Context UriInfo uriInfo) throws URISyntaxException{
+	public Response addDesafio(Desafio desafio, @Context UriInfo uriInfo) throws URISyntaxException{
 		//contexto e usuarios default
 		ContextoDAO dao = new ContextoDAO();
 		UsuarioDAO dao2 = new UsuarioDAO();
 		desafio.setContexto(dao.getById(1L));
 		desafio.setUsuario(dao2.getById(1L));
 		//
-		Desafio newDesafio = desafioService.addDesafio(desafio);
-		String newId = String.valueOf(newDesafio.getId());
+		desafioService.addDesafio(desafio);
+		String newId = String.valueOf(desafio.getId());
 		URI uri = uriInfo.getAbsolutePathBuilder().path(newId).build();
-		return Response.created(uri).entity(newDesafio).build();
+		return Response.created(uri).entity(desafio).build();
 		
 	}
 	
 	@GET
-	@Path("getAll")
+	@Path("getAllChallenge")
 	@Produces(MediaType.APPLICATION_JSON)
 	public String retornaDesafios(){
 		Gson g = new Gson();

@@ -1,10 +1,12 @@
-package org.ufpb.projetoayla.meuProjetoWeb.model;
+package org.ufpb.sisalfa.model;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
+import javax.xml.bind.annotation.XmlRootElement;
 
 @MappedSuperclass
+@XmlRootElement
 public abstract class AbstractEntity {
 	@Id
 	@GeneratedValue

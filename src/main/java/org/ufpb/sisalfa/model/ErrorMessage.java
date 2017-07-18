@@ -1,4 +1,4 @@
-package org.ufpb.projetoayla.meuProjetoWeb.model;
+package org.ufpb.sisalfa.model;
 
 import javax.xml.bind.annotation.XmlRootElement;
 

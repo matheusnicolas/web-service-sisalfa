@@ -5,7 +5,9 @@
 
   <persistence-unit name="tarefas" transaction-type="RESOURCE_LOCAL">
     <provider>org.hibernate.ejb.HibernatePersistence</provider>
-    <class>org.ufpb.projetoayla.meuProjetoWeb.model.Usuario</class>
+    <class>org.ufpb.sisalfa.model.Usuario</class>
+    <class>org.ufpb.sisalfa.model.Contexto</class>
+    <class>org.ufpb.sisalfa.model.Desafio</class>
     <properties>
       <property name="hibernate.connection.username" value="root"/>
       <property name="hibernate.connection.password" value="sisalfa"/>

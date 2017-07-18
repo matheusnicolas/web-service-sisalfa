@@ -1,4 +1,4 @@
-package org.ufpb.projetoayla.meuProjetoWeb.exception;
+package org.ufpb.sisalfa.exception;
 
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -6,7 +6,7 @@ import javax.ws.rs.core.Response.Status;
 import javax.ws.rs.ext.ExceptionMapper;
 import javax.ws.rs.ext.Provider;
 
-import org.ufpb.projetoayla.meuProjetoWeb.model.ErrorMessage;
+import org.ufpb.sisalfa.model.ErrorMessage;
 
 @Provider
 public class GenericExceptionMapper implements ExceptionMapper<Throwable> {

@@ -1,4 +1,4 @@
-package org.ufpb.projetoayla.meuProjetoWeb.exception;
+package org.ufpb.sisalfa.exception;
 
 public class DataNotFoundException extends RuntimeException{
 

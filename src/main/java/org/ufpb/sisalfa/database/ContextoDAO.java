@@ -1,6 +1,6 @@
-package org.ufpb.projetoayla.meuProjetoWeb.database;
+package org.ufpb.sisalfa.database;
 
-import org.ufpb.projetoayla.meuProjetoWeb.model.Contexto;
+import org.ufpb.sisalfa.model.Contexto;
 
 public class ContextoDAO extends GenericDAO <Contexto>{
 	public long retornaIdContexto(){

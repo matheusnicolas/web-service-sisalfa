@@ -1,20 +1,14 @@
-package org.ufpb.projetoayla.meuProjetoWeb.service;
+package org.ufpb.sisalfa.service;
 
 import java.util.List;
 
-import org.ufpb.projetoayla.meuProjetoWeb.database.ContextoDAO;
-import org.ufpb.projetoayla.meuProjetoWeb.model.Contexto;
+import org.ufpb.sisalfa.database.ContextoDAO;
+import org.ufpb.sisalfa.model.Contexto;
 
 public class ContextoService {
 	
 	private static ContextoDAO dao = new ContextoDAO();
 	
-	public ContextoService(){
-		//contextos.put(1L, new Contexto(1, "Instituto", "IMAGEM.PNG" ,"(DESCRIÇÃO ÁUDIO)", "João"));
-		//contextos.put(2L, new Contexto(2, "Brasil", "país.jpeg", "(DESCRIÇÃO ÁUDIO)", "Maria"));
-		//contextos.put(3L, new Contexto(3, "Urbanização", "RUA.PNG", "(DESCRIÇÃO ÁUDIO)" , "Felipe"));
-	}
-
 	public List<Contexto> getAllContextos(){
 		return dao.findAll();
 	}
@@ -23,17 +17,12 @@ public class ContextoService {
 		return dao.getById(id);
 	}
 	
-	public Contexto addContexto(Contexto contexto){
+	public void addContexto(Contexto contexto){
 		dao.save(contexto);
-		return contexto;
 	}
 	
-	public Contexto updateContexto(Contexto contexto){
-		if(contexto.getId() <= 0){
-			return null;
-		}
+	public void updateContexto(Contexto contexto){
 		dao.update(contexto);
-		return contexto;
 	}
 	
 	public void removeContexto(long id){
