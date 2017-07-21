@@ -14,4 +14,10 @@ public class UsuarioService {
 	public List<Usuario> getAllUsuarios(){
 		return dao.findAll();
 	}
+	public Usuario getUsuario(long id){
+		return dao.getById(id);
+	}
+	public void deleteUser(long id){
+		dao.delete(dao.getById(id));
+	}
 }

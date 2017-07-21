@@ -35,5 +35,8 @@ public class Usuario extends AbstractEntity {
 	public void setStatus(boolean status) {
 		this.status = status;
 	}
-	
+	@Override
+	public String toString() {
+		return this.nome;
+	}
 }

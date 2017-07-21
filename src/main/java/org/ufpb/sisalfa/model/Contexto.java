@@ -24,7 +24,15 @@ public class Contexto extends AbstractEntity {
 	@JoinColumn(nullable=false)
 	@OneToOne(cascade={CascadeType.PERSIST},fetch=FetchType.LAZY)
 	private Usuario usuario;
+	@Column(nullable = false) 
+	private Long idUsuario;
 	
+	public Long getIdUsuario() {
+		return idUsuario;
+	}
+	public void setIdUsuario(Long idUsuario) {
+		this.idUsuario = idUsuario;
+	}
 	public String getNome() {
 		return nome;
 	}

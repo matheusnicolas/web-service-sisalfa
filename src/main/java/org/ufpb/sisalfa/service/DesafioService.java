@@ -14,4 +14,5 @@ public class DesafioService {
 	public List<Desafio> getAllDesafio(){
 		return dao.findAll();
 	}
+	
 }

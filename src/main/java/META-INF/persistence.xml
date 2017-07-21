@@ -5,14 +5,15 @@
 
   <persistence-unit name="tarefas" transaction-type="RESOURCE_LOCAL">
     <provider>org.hibernate.ejb.HibernatePersistence</provider>
-    <class>org.ufpb.sisalfa.model.Usuario</class>
-    <class>org.ufpb.sisalfa.model.Contexto</class>
-    <class>org.ufpb.sisalfa.model.Desafio</class>
+	    <class>org.ufpb.sisalfa.model.Usuario</class>
+	    <class>org.ufpb.sisalfa.model.Contexto</class>
+	    <class>org.ufpb.sisalfa.model.Desafio</class>
+	    
     <properties>
       <property name="hibernate.connection.username" value="root"/>
       <property name="hibernate.connection.password" value="sisalfa"/>
       <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
-      <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/sisalfa"/>
+      <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/sisalfa?useSSL=false"/>
       <property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider"/>
       <property name="hibernate.show_sql" value="true"/>
       <property name="hibernate.hbm2ddl.auto" value="update"/>
