@@ -3,6 +3,7 @@ package org.ufpb.sisalfa.service;
 import java.util.List;
 
 import org.ufpb.sisalfa.database.ContextoDAO;
+import org.ufpb.sisalfa.database.UsuarioDAO;
 import org.ufpb.sisalfa.model.Contexto;
 
 public class ContextoService {
@@ -18,6 +19,8 @@ public class ContextoService {
 	}
 	
 	public void addContexto(Contexto contexto){
+		UsuarioDAO udao = new UsuarioDAO();
+		contexto.setUsuario(udao.getById(contexto.getIdUsuario()));
 		dao.save(contexto);
 	}
 	

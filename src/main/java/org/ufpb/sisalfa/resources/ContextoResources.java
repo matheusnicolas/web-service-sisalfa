@@ -14,7 +14,6 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import org.ufpb.sisalfa.database.UsuarioDAO;
 import org.ufpb.sisalfa.model.Contexto;
 import org.ufpb.sisalfa.service.ContextoService;
 
@@ -26,8 +25,6 @@ public class ContextoResources {
 	@Path("addContext")
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response addContexto(Contexto contexto){
-		UsuarioDAO dao = new UsuarioDAO();
-		contexto.setUsuario(dao.getById(contexto.getIdUsuario()));
 		contextoService.addContexto(contexto);
 		return Response.ok(contexto.getId()).build();																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																			
 	}
