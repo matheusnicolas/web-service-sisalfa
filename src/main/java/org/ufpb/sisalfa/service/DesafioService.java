@@ -1,5 +1,6 @@
 package org.ufpb.sisalfa.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.ufpb.sisalfa.database.ContextoDAO;
@@ -20,5 +21,18 @@ public class DesafioService {
 	public List<Desafio> getAllDesafio(){
 		return dao.findAll();
 	}
-	
+	public Desafio getDesafio(long id){
+		return dao.getById(id);
+	}
+	public List<Desafio> getDesafioDoContexto(long idContexto){
+		List<Desafio> desafios = getAllDesafio();
+		List<Desafio> lista = new ArrayList<Desafio>();
+		for (Desafio d : desafios){
+			if (d.getContexto().getId()==idContexto){
+				lista.add(d);
+			}
+		}
+		//if (lista.size()==0) throw new ContextoVazioException("Não existem desafios para esse contexto!");
+		return lista;
+	}
 }
