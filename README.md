@@ -13,51 +13,47 @@
 | ------------- | ------------- |
 | URL  | /Sisalfa/{Params}  |
 | Method | POST | GET | PUT | DELETE  |
-|URL Params |  Users:<br />/Sisalfa/getAllUsers<br />/Sisalfa/addUser<br />/Sisalfa/removeUser<br />Context:<br />/Sisalfa/getAllContext<br />/Sisalfa/addContext<br />/Sisalfa/removeContext<br />Challenge:<br />/Sisalfa/getAllChallenge<br />/Sisalfa/addChalenge<br />/Sisalfa/removeChallenge  |
-|Data Params | { 
-  User: { 
-    nome: [string], 
-  } 
-}
-
-{ 
-  Context: { 
-    nome: [string], 
-    idUsuario: [long], 
-    imagem: [string], 
-    som: [string], 
-    video: [string], 
-  } 
-}
-
-
-
-{ 
-  Challenge: { 
-    palavra: [string], 
-    idUsuario: [string], 
-    idContexto: [string], 
-    som: [string], 
-    video: [string], 
-    imagem: [string], 
-  } 
-}
-
-
-
+|URL Params |  Users:<br /><br />/Sisalfa/getAllUsers<br />/Sisalfa/addUser<br />/Sisalfa/removeUser<br />Context:<br /><br />/Sisalfa/getAllContext<br />/Sisalfa/addContext<br />/Sisalfa/removeContext<br />Challenge:<br /><br />/Sisalfa/getAllChallenge<br />/Sisalfa/addChalenge<br />/Sisalfa/removeChallenge  |
+|Data Params | { <br />
+  User: { <br />
+    nome: [string], <br />
+  } <br />
+}<br />
+<br />
+{ <br />
+  Context: {<br /> 
+    nome: [string],<br /> 
+    idUsuario: [long], <br />
+    imagem: [string], <br />
+    som: [string], <br />
+    video: [string], <br />
+  } <br />
+}<br />
+<br />
+{ <br />
+  Challenge: {<br /> 
+    palavra: [string],<br /> 
+    idUsuario: [string], <br />
+    idContexto: [string], <br />
+    som: [string], <br />
+    video: [string], <br />
+    imagem: [string], <br />
+  } <br />
+}<br />
+<br />
    |
-|Sample Call in Html file | $.ajax({
-  url: "/Sisalfa/addUser",
-  dataType: "json",
-  data : { 
-    u: { 
-      nome : "Joao" 
-    }
-  },
-  type : "POST",
-  success : function(r) {
-    console.log(r);
-  }
-});
+|Sample Call in Html file | $.ajax({<br />
+  url: "/Sisalfa/addUser",<br />
+  dataType: "json",<br />
+  data : { <br />
+    u: { <br />
+      nome : "Joao"<br /> 
+    }<br />
+  },<br />
+  type : "POST",<br />
+  success : function(r) {<br />
+    console.log(r);<br />
+  }<br />
+});<br />
 
   |
