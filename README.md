@@ -9,3 +9,71 @@
 * [Ayla Rebouças](https://github.com/ayladebora)
 
 
+| Title|Sisalfa * Projeto e Desenvolvimento de um Sistema Colaborativo para apoiar o Processo de Alfabetização de Jovens e Adultos. |
+| ------------- | ------------- |
+| URL  | /Sisalfa/{Params}  |
+| Method | POST | GET | PUT | DELETE  |
+|URL Params |  Users:
+
+/Sisalfa/getAllUsers
+/Sisalfa/addUser
+/Sisalfa/removeUser
+
+Context:
+
+/Sisalfa/getAllContext
+/Sisalfa/addContext
+/Sisalfa/removeContext
+
+Challenge:
+
+/Sisalfa/getAllChallenge
+/Sisalfa/addChalenge
+/Sisalfa/removeChallenge  |
+|Data Params | { 
+  User: { 
+    nome: [string], 
+  } 
+}
+
+{ 
+  Context: { 
+    nome: [string], 
+    idUsuario: [long], 
+    imagem: [string], 
+    som: [string], 
+    video: [string], 
+  } 
+}
+
+
+
+{ 
+  Challenge: { 
+    palavra: [string], 
+    idUsuario: [string], 
+    idContexto: [string], 
+    som: [string], 
+    video: [string], 
+    imagem: [string], 
+  } 
+}
+
+
+
+   |
+|Sample Call in Html file | $.ajax({
+  url: "/Sisalfa/addUser",
+  dataType: "json",
+  data : { 
+    u: { 
+      nome : "Joao" 
+    }
+  },
+  type : "POST",
+  success : function(r) {
+    console.log(r);
+  }
+});
+
+  |
