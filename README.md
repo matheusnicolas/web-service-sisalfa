@@ -13,23 +13,7 @@
 | ------------- | ------------- |
 | URL  | /Sisalfa/{Params}  |
 | Method | POST | GET | PUT | DELETE  |
-|URL Params |  Users:
-
-/Sisalfa/getAllUsers
-/Sisalfa/addUser
-/Sisalfa/removeUser
-
-Context:
-
-/Sisalfa/getAllContext
-/Sisalfa/addContext
-/Sisalfa/removeContext
-
-Challenge:
-
-/Sisalfa/getAllChallenge
-/Sisalfa/addChalenge
-/Sisalfa/removeChallenge  |
+|URL Params |  Users:<br />/Sisalfa/getAllUsers<br />/Sisalfa/addUser<br />/Sisalfa/removeUser<br />Context:<br />/Sisalfa/getAllContext<br />/Sisalfa/addContext<br />/Sisalfa/removeContext<br />Challenge:<br />/Sisalfa/getAllChallenge<br />/Sisalfa/addChalenge<br />/Sisalfa/removeChallenge  |
 |Data Params | { 
   User: { 
     nome: [string], 
