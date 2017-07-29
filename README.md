@@ -12,7 +12,7 @@
 | Title|Sisalfa<br/> Projeto e Desenvolvimento de um Sistema Colaborativo para apoiar o Processo de Alfabetização de Jovens e Adultos. |
 | ------------- | ------------- |
 | URL  | /Sisalfa/{Params}  |
-| Method | ** POST * GET * PUT * DELETE  ** |
-|URL Params |  **Users:**<br /><br />/Sisalfa/getAllUsers<br />/Sisalfa/addUser<br />/Sisalfa/removeUser<br />**Context:**<br /><br />/Sisalfa/getAllContext<br />/Sisalfa/addContext<br />/Sisalfa/removeContext<br />**Challenge:**<br /><br />/Sisalfa/getAllChallenge<br />/Sisalfa/addChalenge<br />/Sisalfa/removeChallenge  |
+| Method | ** POST  GET  PUT  DELETE  ** |
+|URL Params |  **Users:**<br /><br />/Sisalfa/getAllUsers<br />/Sisalfa/addUser<br />/Sisalfa/removeUser<br /><br />**Context:**<br /><br />/Sisalfa/getAllContext<br />/Sisalfa/addContext<br />/Sisalfa/removeContext<br /><br />**Challenge:**<br /><br />/Sisalfa/getAllChallenge<br />/Sisalfa/addChalenge<br />/Sisalfa/removeChallenge  |
 |Data Params | { <br />  User: { <br />    nome: [string], <br />  } <br />}<br /><br />{ <br /><br />   Context: {<br />    nome: [string],<br />   idUsuario: [long], <br />    imagem: [string], <br />    som: [string], <br />    video: [string], <br />  } <br />}<br /><br />{ <br /> <br />  Challenge: {<br />    palavra: [string],<br />    idUsuario: [string], <br />    idContexto: [string], <br />    som: [string], <br />    video: [string], <br />    imagem: [string], <br />  } <br />}<br /><br />   |
 |Sample Call in Html file | $.ajax({<br />  url: "/Sisalfa/addUser",<br />  dataType: "json",<br />  data : { <br />    u: { <br />      nome : "Joao"<br />    }<br />  },<br />  type : "POST",<br />  success : function(r) {<br />    console.log(r);<br />  }<br />});<br />  |
